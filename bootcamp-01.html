@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Pharmacist(id,name,age,address){
+        this.id=id;
+        this.name=name;
+        this.age=age;
+        this.address=address;
+      this.getId=function () {
+          return this.id;
+      }
+      this.getName=function(){
+          return this.name;
+      }
+      this.getAge=function(){
+          return this.age;
+      }
+      this.getAddress=function(){
+          return this.address;
+      }
+        this.setId=function (id) {
+            this.id=id;
+        }
+        this.setName=function (name) {
+            this.name=name;
+        }
+        this.setAge=function (age){
+            this.age=age;
+        }
+        this.setAddress=function (address) {
+            this.address=address;
+        }
+    }
+    //let pharma =new Array(listPharmacist);
+    function PharmacistManager(listPharmacist) {
+        listPharmacist =[];
+        this.getListPharmacist = function (a) {
+            listPharmacist.push(a);
+        }
+        this.Inlistpharmacist = function (listPharmacist) {
+            let data = " ";
+            for (let i = 0; i < listPharmacist.length; i++) {
+                data += listPharmacist[i];
+            }
+            document.write(data);
+        }
+    }
+    let pharmacist1= new Pharmacist(1,"thanh",20,"ha noi");
+    let pharmacist2= new Pharmacist(2,"chinh",21,"ha tay");
+    document.write(" duoc si co id=  "+pharmacist1.getId()+" ten: "+pharmacist1.getName()+" tuoi : "+pharmacist1.getAge()+"  dia chi : "+pharmacist1.getAddress());
+    document.write(" duoc si co id=  "+pharmacist2.getId()+" ten: "+pharmacist2.getName()+" tuoi : "+pharmacist2.getAge()+"  dia chi : "+pharmacist2.getAddress());
+
+    let arr=[];
+    let pharmacistmanager= new PharmacistManager(arr);
+    pharmacistmanager.getListPharmacist(pharmacist1);
+    pharmacistmanager.getListPharmacist(pharmacist2);
+    pharmacistmanager.Inlistpharmacist();
+</script>
+</body>
+</html>
