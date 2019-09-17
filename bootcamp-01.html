@@ -37,28 +37,29 @@
         }
     }
     //let pharma =new Array(listPharmacist);
-    function PharmacistManager(listPharmacist) {
-        listPharmacist =[];
-        this.getListPharmacist = function (a) {
-            listPharmacist.push(a);
+    let listPharmacist =[];
+    function PharmacistManager() {
+        this.getListPharmacist = function (id,name,age,address) {
+            let object=[];
+            object['id']=id;
+            object['name']=name;
+            object['age']=age;
+            object['address']=address;
+            listPharmacist.push(object);
         }
-        this.Inlistpharmacist = function (listPharmacist) {
-            let data = " ";
+        this.Inlistpharmacist = function () {
             for (let i = 0; i < listPharmacist.length; i++) {
-                data += listPharmacist[i];
+                console.log(listPharmacist[i]);
             }
-            document.write(data);
         }
     }
+    let pharmacistmanager= new PharmacistManager();
     let pharmacist1= new Pharmacist(1,"thanh",20,"ha noi");
     let pharmacist2= new Pharmacist(2,"chinh",21,"ha tay");
-    document.write(" duoc si co id=  "+pharmacist1.getId()+" ten: "+pharmacist1.getName()+" tuoi : "+pharmacist1.getAge()+"  dia chi : "+pharmacist1.getAddress());
-    document.write(" duoc si co id=  "+pharmacist2.getId()+" ten: "+pharmacist2.getName()+" tuoi : "+pharmacist2.getAge()+"  dia chi : "+pharmacist2.getAddress());
-
-    let arr=[];
-    let pharmacistmanager= new PharmacistManager(arr);
-    pharmacistmanager.getListPharmacist(pharmacist1);
-    pharmacistmanager.getListPharmacist(pharmacist2);
+   // document.write(" duoc si co id=  "+pharmacist1.getId()+" ten: "+pharmacist1.getName()+" tuoi : "+pharmacist1.getAge()+"  dia chi : "+pharmacist1.getAddress());
+   // document.write(" duoc si co id=  "+pharmacist2.getId()+" ten: "+pharmacist2.getName()+" tuoi : "+pharmacist2.getAge()+"  dia chi : "+pharmacist2.getAddress())
+    pharmacistmanager.getListPharmacist(pharmacist1.getId(),pharmacist1.getName(),pharmacist1.getAge(),pharmacist1.getAddress());
+    pharmacistmanager.getListPharmacist(pharmacist2.getId(),pharmacist2.getName(),pharmacist2.getAge(),pharmacist2.getAddress());
     pharmacistmanager.Inlistpharmacist();
 </script>
 </body>
